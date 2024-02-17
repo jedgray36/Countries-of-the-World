@@ -41,9 +41,10 @@ const CountriesList = () => {
     
       return (
         <div>
+          <h3 className="title">Countries</h3>
             {data.map((country: Country) => (
                 <div className="country" key={country.name.common}>
-                  {country.name.common} - {<img width={25} height={15} src={country.flags.png}/>}
+                  {country.name.common} - {<img alt="flag" width={25} height={15} src={country.flags.png}/>}
                   </div>
             ))}
         </div>

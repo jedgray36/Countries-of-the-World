@@ -7,15 +7,9 @@ import "./Styles/sidebar.css";
 
 
 const Sidebar = () => {
-
-
       return (
         <div className="sidebar">
-        <ul>
         <CountriesList />
-        </ul>
-       
-
         </div>
       );
     }

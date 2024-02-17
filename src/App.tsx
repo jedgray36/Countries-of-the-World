@@ -3,15 +3,18 @@ import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import Sidebar from './Sidebar';
+import Header from './Header';
+import MainContent from './MainContent';
 
 const App = () => {
 
   return (
     <div className="App">
-      <div className='header'>
-      <div className='title'>Countries of the World</div>
-      </div>
     <Sidebar />
+    <div className='page'>
+      <Header />
+      <MainContent />
+    </div>
     </div>
   );
 }
