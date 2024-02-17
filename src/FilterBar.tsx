@@ -25,7 +25,7 @@ setRegionFilter(region);
 
 
   return (
-    <div className="container">
+    <div className="container-filter">
       <div className='filters'>
         <div className='filter'>
         <span>Filter By Cotinent: </span>

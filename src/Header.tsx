@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-
+import "./Styles/Header.css"
 
 const Header = () => {
 
   return (
     <div className='header'>
-    <div className='title'>Countries of the World</div>
+    <div className='appTitle'>COUNTRIES OF THE WORLD</div>
     </div>
   );
 }

@@ -7,7 +7,7 @@
 }
 
 .country:hover {
-background-color: rgb(27, 27, 27);
+background-color: #464646;
 transition: background-color 0.2s;
 }
 

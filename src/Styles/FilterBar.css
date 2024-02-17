@@ -1,8 +1,9 @@
-.container {
+.container-filter {
     margin: 1rem;
     padding: 1rem;
-    background-color: rgb(184, 184, 184);
-    width: 100%;
+    background-color: #AC3B61;
+    color: white;
+    width: 97.7%;
     border-radius: 15px;
 
 }
@@ -18,7 +19,7 @@
   -moz-appearance: none;
   appearance: none;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
   border-radius: 4px;
   background-color: white;
   font-size: 16px;
