@@ -10,3 +10,7 @@
 background-color: rgb(27, 27, 27);
 transition: background-color 0.2s;
 }
+
+.search {
+    margin: 0.4rem;
+}

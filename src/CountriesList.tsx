@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Country } from "./Interfaces/Countries";
 import "./Styles/CountriesList.css"
+import SearchBar from "./SearchBar";
 
 
 interface filterProps {
@@ -13,6 +14,7 @@ const CountriesList: React.FC<filterProps> = ({regionFilter, setCountry}) => {
     const api = "https://restcountries.com/v3.1";
 
     const [data, setData] = useState<Country[]>([]);
+    const [searchData, setSearchData] = useState<Country[]>([]);
 
 
     useEffect(() => {
@@ -27,7 +29,7 @@ const CountriesList: React.FC<filterProps> = ({regionFilter, setCountry}) => {
             const countries = await fetch(URL);
             const jsonData = await countries.json();
             const sortedData = sortData(jsonData)
-            setData(sortedData);
+            setSearchData(sortedData);
         } catch(e) {
             console.log(e)
         }
@@ -49,11 +51,23 @@ const CountriesList: React.FC<filterProps> = ({regionFilter, setCountry}) => {
           return 0;
       });
   };
+
+
+  const search = (query: any) => {
+    const searchResults = data.filter((country: Country) => 
+    country.name.common.toLowerCase().includes(query.toLowerCase())
+    );
+    setSearchData(searchResults);
+    
+    };
     
       return (
         <div>
           <h3 className="title">Countries</h3>
-            {data.map((country: Country) => (
+          <div className="search">
+          <SearchBar querySearch={search}/>
+          </div>
+            {searchData.map((country: Country) => (
                 <div className="country" key={country.name.common} onClick={() => setCountry(country)}>
                   {country.name.common} - {<img alt="flag" width={25} height={15} src={country.flags.svg}/>}
                   </div>
