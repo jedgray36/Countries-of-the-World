@@ -55,7 +55,7 @@ const CountriesList: React.FC<filterProps> = ({regionFilter, setCountry}) => {
           <h3 className="title">Countries</h3>
             {data.map((country: Country) => (
                 <div className="country" key={country.name.common} onClick={() => setCountry(country)}>
-                  {country.name.common} - {<img alt="flag" width={25} height={15} src={country.flags.png}/>}
+                  {country.name.common} - {<img alt="flag" width={25} height={15} src={country.flags.svg}/>}
                   </div>
             ))}
         </div>

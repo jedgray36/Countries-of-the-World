@@ -20,11 +20,7 @@ const [country, setCountry] = useState<Country>();
       <Header />
       <div className="mainContent">
         <FilterBar setRegionFilter={setFilter} />
-        <div className='leftSide'>
           {country ? <InfoSideOne country={country}/> : ""}
-          
-          <div/>
-    </div>
     </div>
     </div>
     </div>

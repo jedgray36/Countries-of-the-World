@@ -1,9 +1,10 @@
 .App {
 background-color: #c7c7c7;
-height: 100vh;
+height: auto;
 display: flex;
 margin: 0;
 padding: 0;
+overflow-y: auto;
 }
 
 .App-header {

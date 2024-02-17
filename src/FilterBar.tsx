@@ -15,7 +15,8 @@ const regions = [
 "Americas",
 "Asia",
 "Europe",
-"Oceania"
+"Oceania",
+"Antarctic"
 ]
 
 const getRegion = (region: any) => {
