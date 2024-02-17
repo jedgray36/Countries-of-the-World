@@ -1,0 +1,26 @@
+.container {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: rgb(184, 184, 184);
+    width: auto;
+    border-radius: 15px;
+
+}
+
+.leftSide {
+    width: 50%;
+    max-width: 60%;
+}
+
+.card {
+    background-color: rgb(184, 184, 184);
+    border: none;
+}
+
+.card img {
+    max-width: 100%; /* Ensure the image does not exceed the width of its container */
+    height: auto; /* Let the height adjust automatically to maintain aspect ratio */
+    max-height: 100%;
+   
+}
+

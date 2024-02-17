@@ -5,9 +5,10 @@ import "./Styles/CountriesList.css"
 
 interface filterProps {
 regionFilter: string;
+setCountry: (country: Country) => void;
 }
 
-const CountriesList: React.FC<filterProps> = ({regionFilter}) => {
+const CountriesList: React.FC<filterProps> = ({regionFilter, setCountry}) => {
 
     const api = "https://restcountries.com/v3.1";
 
@@ -53,7 +54,7 @@ const CountriesList: React.FC<filterProps> = ({regionFilter}) => {
         <div>
           <h3 className="title">Countries</h3>
             {data.map((country: Country) => (
-                <div className="country" key={country.name.common}>
+                <div className="country" key={country.name.common} onClick={() => setCountry(country)}>
                   {country.name.common} - {<img alt="flag" width={25} height={15} src={country.flags.png}/>}
                   </div>
             ))}
