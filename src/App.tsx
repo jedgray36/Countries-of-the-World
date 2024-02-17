@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import CountriesList from './CountriesList';
 
+import 'bootstrap/dist/css/bootstrap.css';
+import Sidebar from './Sidebar';
 
 const App = () => {
 
   return (
     <div className="App">
-      <CountriesList />
+      <div className='header'>
+      <div className='title'>Countries of the World</div>
+      </div>
+    <Sidebar />
     </div>
   );
 }

@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Country } from "./Interfaces/Countries";
+import "./Styles/CountriesList.css"
 
-interface Country {
-  flags: {
-    png: string
-  },
-  name: {
-    common: string
-  },
-  population: number,
-  region: string
-}
 
 
 
@@ -25,8 +17,19 @@ const CountriesList = () => {
         try {
             const countries = await fetch(api);
             const jsonData = await countries.json();
-            setData(jsonData);
-            console.log(jsonData);
+            const sortedData = jsonData.sort((a: any, b: any) => {
+              const nameA = a.name.common.toUpperCase();
+              const nameB = b.name.common.toUpperCase();
+              if (nameA < nameB) {
+                  return -1;
+              }
+              if (nameA > nameB) {
+                  return 1;
+              }
+              return 0;
+          });
+            setData(sortedData);
+            
         } catch(e) {
             console.log(e)
         }
@@ -39,7 +42,9 @@ const CountriesList = () => {
       return (
         <div>
             {data.map((country: Country) => (
-                <div key={country.name.common}>{country.name.common}</div>
+                <div className="country" key={country.name.common}>
+                  {country.name.common} - {<img width={25} height={15} src={country.flags.png}/>}
+                  </div>
             ))}
         </div>
       );

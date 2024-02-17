@@ -1,0 +1,12 @@
+.country {
+    margin-left: 0.3rem;
+    padding: 0.4rem;
+    text-align: left;
+    border-radius: 5px;
+    text-wrap: none;
+}
+
+.country:hover {
+background-color: rgb(27, 27, 27);
+transition: background-color 0.2s;
+}

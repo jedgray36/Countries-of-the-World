@@ -1,0 +1,38 @@
+.sidebar {
+    display: block;
+    width: 240px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    overflow-y: auto;
+    height: 100vh;
+    z-index: 999;
+  }
+
+  .sidebar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .sidebar::-webkit-scrollbar-thumb {
+    background-color: #888888; /* Custom scrollbar thumb color */
+    border-radius: 5px;
+}
+
+  .title {
+    font-size: 25px;
+    padding: 2rem;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  li:hover {
+    background-color: #555;
+  }
