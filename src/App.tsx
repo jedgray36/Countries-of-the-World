@@ -1,19 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import Sidebar from './Sidebar';
 import Header from './Header';
-import MainContent from './MainContent';
+import FilterBar from './FilterBar';
 
 const App = () => {
-
+const [filter, setFilter] = useState("");
   return (
     <div className="App">
-    <Sidebar />
+    <Sidebar filter={filter}/>
     <div className='page'>
       <Header />
-      <MainContent />
+      <div className="mainContent">
+        <FilterBar setRegionFilter={setFilter} />
+    </div>
     </div>
     </div>
   );

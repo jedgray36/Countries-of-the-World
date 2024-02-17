@@ -1,4 +1,7 @@
-.main-content {
-    flex: 3;
+.mainContent {
+  display: flex;
+    justify-content: center;
+    flex: 2;
     padding: 20px;
+    width: 100%;
   }

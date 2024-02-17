@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Country } from "./Interfaces/Countries";
 import CountriesList from "./CountriesList";
 import "./Styles/sidebar.css";
 
+interface filterProps {
+filter: string
+
+}
 
 
-
-const Sidebar = () => {
+const Sidebar: React.FC<filterProps> = ({filter}) => {
       return (
         <div className="sidebar">
-        <CountriesList />
+        <CountriesList regionFilter={filter} />
         </div>
       );
     }

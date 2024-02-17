@@ -3,11 +3,13 @@ import { Country } from "./Interfaces/Countries";
 import "./Styles/CountriesList.css"
 
 
+interface filterProps {
+regionFilter: string;
+}
 
+const CountriesList: React.FC<filterProps> = ({regionFilter}) => {
 
-const CountriesList = () => {
-
-    const api = "https://restcountries.com/v3.1/all";
+    const api = "https://restcountries.com/v3.1";
 
     const [data, setData] = useState<Country[]>([]);
 
@@ -15,29 +17,37 @@ const CountriesList = () => {
     useEffect(() => {
       const getData = async () => {
         try {
-            const countries = await fetch(api);
+          let URL = "";
+          if (!regionFilter || regionFilter === "All") {
+            URL = `${api}/all`
+          } else {
+            URL = `${api}/region/${regionFilter}`
+          }
+            const countries = await fetch(URL);
             const jsonData = await countries.json();
-            const sortedData = jsonData.sort((a: any, b: any) => {
-              const nameA = a.name.common.toUpperCase();
-              const nameB = b.name.common.toUpperCase();
-              if (nameA < nameB) {
-                  return -1;
-              }
-              if (nameA > nameB) {
-                  return 1;
-              }
-              return 0;
-          });
+            const sortedData = sortData(jsonData)
             setData(sortedData);
-            
         } catch(e) {
             console.log(e)
         }
       }
     getData();
-    }, [])
+    }, [regionFilter])
     
-    
+
+    const sortData = (data: any) => {
+      return data.sort((a:any, b:any) => {
+          const nameA = a.name.common.toUpperCase();
+          const nameB = b.name.common.toUpperCase();
+          if (nameA < nameB) {
+              return -1;
+          }
+          if (nameA > nameB) {
+              return 1;
+          }
+          return 0;
+      });
+  };
     
       return (
         <div>
