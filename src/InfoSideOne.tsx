@@ -16,10 +16,12 @@ const InfoSideOne: React.FC<InfoOneProps> = ({country}) => {
 
     <div className='flex'>
     <div className="container">
-        <div>
+        <div className='contents'>
             <div className='card'>
                 <div className='name'>{country.name.common.toUpperCase()}</div>
+                <div className='contents'>
                 <img alt='flag' src={country.flags.svg}/>
+                </div>
             </div>
         </div>
       </div>

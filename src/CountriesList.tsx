@@ -66,7 +66,6 @@ const CountriesList: React.FC<filterProps> = ({regionFilter, sort, setCountry}) 
     
       return (
         <div>
-          <h3 className="title">Countries</h3>
           <div className="search">
           <SearchBar querySearch={search}/>
           </div>

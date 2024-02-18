@@ -1,5 +1,5 @@
 .sidebar {
-    width: 270px;
+    width: 300px;
    background-color: #817c7d;
     color: #ffffff;
     overflow-y: auto;
@@ -37,4 +37,28 @@
   
   li:hover {
     background-color: #555;
+  }
+
+  .tabs {
+    background-color: #817c7d;
+    border: none;
+  }
+
+  button:hover {
+    background-color: #817c7d;
+    border-color: none;
+  }
+
+  .nav-link {
+    color: white;
+    border-color: none;
+  }
+  .nav-link:hover {
+    background-color: #817c7d;
+    border-color: none;
+  }
+
+  li:hover {
+    background-color: #817c7d;
+    border-color: none;
   }

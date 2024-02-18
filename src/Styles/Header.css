@@ -4,4 +4,34 @@
     padding: 20px;
     flex: 1;
   }
+
+  .con {
+    display: flex;
+    width: 100%;
+  }
+
+  .headerContainer {
+display: flex;
+justify-content: end;
+width: 100%;
+  }
+
+  .sideContainer {
+    display: flex;
+    justify-content: end;
+    width: 50%;
+    align-items: center;
+      }
+
+.flagButton {
+  background-color: #123C69;
+  color: white;
+  border-radius: 5px;
+  padding: 0.5rem;
+  border: none;
+}
+
+.flagButton:hover {
+  background-color: #123C69;
+}
     

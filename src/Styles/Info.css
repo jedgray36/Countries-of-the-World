@@ -11,17 +11,24 @@
     justify-content: space-between;
 }
 
+.contents {
+    display: flex;
+    justify-content: center;
+}
+
 .card {
     background-color: #AC3B61;
     border: none;
-    color: white
+    color: white;
+    display: flex;
+    justify-content: center;
 }
 
 .card img {
     border-radius: 9px;
-    max-width: 100%; 
-    height: auto; 
-    max-height: 100%;
+    max-width: 90%; 
+    height: 90%; 
+    max-height: 90%;
     border: 3px solid white;
 }
 
@@ -46,9 +53,9 @@
 
 a {
     font-size: 20px;
-    color: #000000; /* Default color for unvisited links */
-    text-decoration: none; /* Remove underline by default */
-    transition: color 0.3s ease; /* Smooth color transition */
+    color: #000000;
+    text-decoration: none; 
+    transition: color 0.3s ease; 
     background-color: rgb(237, 237, 237);
     margin-top: 0.5rem;
     padding: 0.3rem;
