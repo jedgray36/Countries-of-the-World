@@ -27,16 +27,14 @@ const getSort = (sort: any) => {
         {regions.map((region) => (
             <option key={region} value={region}>{region}</option>
         ))}
-        
         </select>
         </div>
         <div>
-            Sort By: 
+            <span>Sort By: </span>
         <select defaultValue="A - Z" onChange={(e) => getSort(e.target.value)} className="select">
         {sorts.map((sort) => (
             <option key={sort} value={sort}>{sort}</option>
         ))}
-        
         </select>
         </div>
     </div>
