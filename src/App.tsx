@@ -15,24 +15,28 @@ const [sort, setSort] = useState("");
 const [country, setCountry] = useState<Country>();
 const [quiz, setQuiz] = useState(false);
 
+
+const openQuiz = () => {
+  setQuiz(!quiz);
+  setCountry(undefined);
+}
+
   return (
     <div className="App">
-    <Sidebar setCountry={setCountry} filter={filter} sort={sort}/>
+      {!quiz ? <Sidebar setCountry={setCountry} filter={filter} sort={sort}/> : ""}
     <div className='page'>
-      <Header setQuiz={setQuiz} />
+      <Header setQuiz={openQuiz} />
       <div className="mainContent">
-
-          {quiz && !country ?
+          {quiz ?
           <FlagQuiz />
             : ""
           }
-
           {country ?
           <>
           <FilterBar setSort={setSort} setRegionFilter={setFilter} />
           <InfoSideOne country={country}/> </>
           : 
-          <div className='noSelect'>Select a Country to see information</div>}
+          " "}
     </div>
     </div>
     </div>

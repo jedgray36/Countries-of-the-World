@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Styles/Header.css"
 import { Country } from './Interfaces/Countries';
 
@@ -8,15 +8,22 @@ setQuiz: (isActive: boolean) => void;
 }
 
 const Header: React.FC<headerProps> = ({setQuiz}) => {
+  const [quizState, setQuizState] = useState(false);
+
+  const toggle = () => {
+    const newState = !quizState;
+    setQuizState(newState);
+    setQuiz(newState); 
+  }
 
   return (
     <div className='header'>
       <div className='con'>
       <div className='headerContainer'>
-    <div className='appTitle'>COUNTRIES OF THE WORLD</div>
+    <div className='appTitle'>{quizState ? "FLAGS OF THE WORLD" : "COUNTRIES OF THE WORLD"}</div>
     </div>
     <div className='sideContainer'>
-    <button className='flagButton' onClick={() => {setQuiz(true)}}>Flags Quiz</button>
+    <button className='flagButton' onClick={() => {toggle()}}>{!quizState ? "Flags Quiz" : "Countries"}</button>
     </div>
     </div>
     </div>
