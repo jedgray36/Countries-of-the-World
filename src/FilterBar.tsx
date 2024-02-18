@@ -23,7 +23,7 @@ const getSort = (sort: any) => {
       <div className='filters'>
         <div className='filter'>
         <span>Filter By Cotinent: </span>
-        <select className="select" defaultValue="All" onChange={(e) => getRegion(e.target.value)}>
+        <select className="selectFil" defaultValue="All" onChange={(e) => getRegion(e.target.value)}>
         {regions.map((region) => (
             <option key={region} value={region}>{region}</option>
         ))}
@@ -31,7 +31,7 @@ const getSort = (sort: any) => {
         </div>
         <div>
             <span>Sort By: </span>
-        <select defaultValue="A - Z" onChange={(e) => getSort(e.target.value)} className="select">
+        <select defaultValue="A - Z" onChange={(e) => getSort(e.target.value)} className="selectFil">
         {sorts.map((sort) => (
             <option key={sort} value={sort}>{sort}</option>
         ))}

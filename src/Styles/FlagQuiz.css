@@ -1,0 +1,77 @@
+.quizContainer {
+    height: 100vh;
+    background-color: #EEE2DC;
+}
+
+.description {
+    justify-content: center;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #AC3B61;
+    color: white;
+    width: 97%;
+    border-radius: 15px;
+}
+
+.select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 8px;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    background-color: #EEE2DC;
+    font-size: 16px;
+    width: 200px;
+    cursor: pointer;  
+}
+
+.start {
+    background-color: #123C69;
+    color: white;
+    border-radius: 5px;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0px;
+}
+.start:hover {
+    background-color: #123C69;
+  }
+
+  .flagCard {
+    display: flex;
+    background-color: #AC3B61;
+    width: 50vw;
+    height: 80vh;
+    border-radius: 15px;
+    justify-content: center;
+  }
+
+  .flag {
+    margin: 1rem;
+    border-radius: 9px;
+    max-width: 60%; 
+    height: 60%; 
+    max-height: 60%;
+  }
+
+  .game {
+    width: 100%;
+    display: flex;
+    justify-content: center ;
+  }
+
+  .next {
+    display: flex;
+    background-color: #123C69;
+    color: white;
+    border-radius: 5px;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0px;
+    height: fit-content;
+}
+
+.nextCon {
+align-items: center;
+}
