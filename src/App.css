@@ -35,3 +35,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 .page {
   width: 100%;
 }
+
+.noSelect {
+  text-align: center;
+}

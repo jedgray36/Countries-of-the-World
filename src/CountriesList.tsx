@@ -6,10 +6,11 @@ import SearchBar from "./SearchBar";
 
 interface filterProps {
 regionFilter: string;
+sort: string;
 setCountry: (country: Country) => void;
 }
 
-const CountriesList: React.FC<filterProps> = ({regionFilter, setCountry}) => {
+const CountriesList: React.FC<filterProps> = ({regionFilter, sort, setCountry}) => {
 
     const api = "https://restcountries.com/v3.1";
 
@@ -28,27 +29,30 @@ const CountriesList: React.FC<filterProps> = ({regionFilter, setCountry}) => {
           }
             const countries = await fetch(URL);
             const jsonData = await countries.json();
-            const sortedData = sortData(jsonData)
+            const sortedData = sortData(jsonData);
             setSearchData(sortedData);
         } catch(e) {
             console.log(e)
         }
       }
     getData();
-    }, [regionFilter])
+    }, [regionFilter, sort])
     
 
     const sortData = (data: any) => {
       return data.sort((a:any, b:any) => {
           const nameA = a.name.common.toUpperCase();
           const nameB = b.name.common.toUpperCase();
-          if (nameA < nameB) {
-              return -1;
-          }
-          if (nameA > nameB) {
-              return 1;
-          }
-          return 0;
+          if (sort === 'A - Z' || sort === "") {
+            return nameA.localeCompare(nameB);
+        } else if (sort === 'Z - A') {
+            return nameB.localeCompare(nameA);
+        } else if (sort === 'Population, H - L') {
+            return b.population - a.population;
+        } else if (sort === 'Population, L - H') {
+            return a.population - b.population;
+        }
+        return 0;
       });
   };
 

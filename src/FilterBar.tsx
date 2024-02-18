@@ -1,52 +1,44 @@
 import React from 'react';
 import "./Styles/FilterBar.css";
+import { regions, sorts } from './Interfaces/Countries';
 
 
 interface filterProps {
-setRegionFilter: (region: string) => void
+setRegionFilter: (region: string) => void;
+setSort: (sort: string) => void;
 }
 
-
-
-const FilterBar: React.FC<filterProps> = ({setRegionFilter}) => {
-
-const regions = [
-"Africa",
-"Americas",
-"Asia",
-"Europe",
-"Oceania",
-"Antarctic"
-]
+const FilterBar: React.FC<filterProps> = ({setRegionFilter, setSort}) => {
 
 const getRegion = (region: any) => {
 setRegionFilter(region);
 }
 
+const getSort = (sort: any) => {
+  setSort(sort);
+  }
 
   return (
     <div className="container-filter">
       <div className='filters'>
         <div className='filter'>
         <span>Filter By Cotinent: </span>
-        <select className="select" defaultValue="All" onChange={(e) => getRegion(e.target.value)} aria-label="Default select example">
-        <option value="All">All</option>
+        <select className="select" defaultValue="All" onChange={(e) => getRegion(e.target.value)}>
         {regions.map((region) => (
-            <option value={region}>{region}</option>
+            <option key={region} value={region}>{region}</option>
         ))}
         
         </select>
         </div>
-        {/* <div>
-            Filter By Population: 
-        <select  onChange={(e) => getRegion(e.target.value)} className="select" aria-label="Default select example">
-        <option value="All">All</option>
-        {regions.map((region) => (
-            <option value={region}>{region}</option>
+        <div>
+            Sort By: 
+        <select defaultValue="A - Z" onChange={(e) => getSort(e.target.value)} className="select">
+        {sorts.map((sort) => (
+            <option key={sort} value={sort}>{sort}</option>
         ))}
         
         </select>
-        </div> */}
+        </div>
     </div>
       </div>
   );

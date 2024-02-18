@@ -4,15 +4,16 @@ import "./Styles/sidebar.css";
 import { Country } from "./Interfaces/Countries";
 
 interface filterProps {
-filter: string
+filter: string;
+sort: string;
 setCountry: (country: Country) => void;
 }
 
 
-const Sidebar: React.FC<filterProps> = ({filter, setCountry}) => {
+const Sidebar: React.FC<filterProps> = ({filter, sort, setCountry}) => {
       return (
         <div className="sidebar">
-        <CountriesList setCountry={setCountry} regionFilter={filter} />
+        <CountriesList setCountry={setCountry}  regionFilter={filter} sort={sort} />
         </div>
       );
     }
