@@ -15,7 +15,7 @@ setCountry: (country: Country) => void;
 const Sidebar: React.FC<filterProps> = ({filter, sort, setCountry}) => {
       return (
         <div className="sidebar">
-          <div className="title">Countries</div>
+          <div className="title">COUNTRIES</div>
         <CountriesList setCountry={setCountry}  regionFilter={filter} sort={sort} />
         </div>
       );

@@ -31,9 +31,9 @@ const openQuiz = () => {
           <FlagQuiz />
             : ""
           }
+          <FilterBar setSort={setSort} setRegionFilter={setFilter} />
           {country ?
           <>
-          <FilterBar setSort={setSort} setRegionFilter={setFilter} />
           <InfoSideOne country={country}/> </>
           : 
           " "}

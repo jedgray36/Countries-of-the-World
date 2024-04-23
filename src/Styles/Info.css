@@ -1,7 +1,7 @@
 .container {
     margin: 1rem;
     padding: 1rem;
-    background-color: #AC3B61;
+    background-color: #003c7b;
     border-radius: 15px;
 
 }
@@ -17,7 +17,7 @@
 }
 
 .card {
-    background-color: #AC3B61;
+    background-color: #003c7b;
     border: none;
     color: white;
     display: flex;

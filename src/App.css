@@ -1,5 +1,5 @@
 .App {
-background-color: #EEE2DC;
+background-image: linear-gradient(rgb(70, 70, 70), rgb(42, 42, 42));
 height: auto;
 display: flex;
 margin: 0;
@@ -29,7 +29,7 @@ overflow-y: auto;
   height: fit-content;
   background-color: #282828;
   text-align: center;
-font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .page {

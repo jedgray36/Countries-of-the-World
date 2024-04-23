@@ -47,6 +47,7 @@ const CountriesList: React.FC<filterProps> = ({regionFilter, sort, setCountry}) 
             const countries = await fetch(URL);
             const jsonData = await countries.json();
             const sortedData = sortData(jsonData);
+            console.log(sortedData);
             setData(sortedData);
             setSearchData(sortedData);
         } catch(e) {

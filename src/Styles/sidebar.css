@@ -1,26 +1,28 @@
 .sidebar {
     width: 300px;
-   background-color: #817c7d;
+   background-color: #004e96;
     color: #ffffff;
     overflow-y: auto;
     height: 100vh;
     z-index: 999;
-  }
+ }
 
   .sidebar::-webkit-scrollbar {
     width: 8px;
   }
 
   .sidebar::-webkit-scrollbar-thumb {
-    background-color: #123C69; /* Custom scrollbar thumb color */
+    background-color: #fdfdfd; /* Custom scrollbar thumb color */
     border-radius: 5px;
 }
 .appTitle {
   font-size: 35px;
   padding: 1rem;
+  
 }
 
   .title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 25px;
     padding: 2rem;
   }
