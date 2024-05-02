@@ -39,6 +39,15 @@ interface Task {
 
 
 
+    const formatData = (list: any) : {student: any, courses: any[]} => {
+        const student = list.student;
+        const courses = list.courses.map((course: any) => course)
+
+        return {student: student, courses: courses}
+    }
+
+
+
     
 return (
     <>

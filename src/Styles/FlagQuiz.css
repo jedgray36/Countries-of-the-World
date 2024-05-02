@@ -48,10 +48,9 @@
   }
 
   .flag {
-    margin: 1rem;
-    border-radius: 9px;
+    margin: 0.5rem;
+    border-radius: 10px;
     max-width: 60%; 
-    height: 60%; 
     max-height: 60%;
   }
 

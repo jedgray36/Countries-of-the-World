@@ -1,10 +1,10 @@
 .App {
-background-image: linear-gradient(rgb(70, 70, 70), rgb(42, 42, 42));
+background-image: url("https://images.pexels.com/photos/41949/earth-earth-at-night-night-lights-41949.jpeg?cs=srgb&dl=pexels-pixabay-41949.jpg&fm=jpg");
 height: auto;
 display: flex;
 margin: 0;
 padding: 0;
-overflow-y: auto;
+background-size: contain;
 }
 
 .App-header {
