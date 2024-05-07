@@ -14,21 +14,24 @@ const InfoSideOne: React.FC<InfoOneProps> = ({country}) => {
 
   return (
 
-    <div className='flex'>
+    <div className='flexItem'>
     <div className="container">
         <div className='contents'>
-            <div className='card'>
-                <div className='name'>{country.name.common.toUpperCase()}</div>
-                <div className='contents'>
-                <img alt='flag' src={country.flags.svg}/>
-                </div>
-            </div>
+            <div className="card w-96 glass">
+              <span>
+                <h2 className="card-title">{country.name.common.toUpperCase()}</h2>
+                  </span>
+            <figure><img src={country.flags.svg} alt="flag"/></figure>
+            <div className="card-body">
+            
+  </div>
+</div>
         </div>
       </div>
           <div className="container">
           <div>
               <div className='card'>
-              <div className='name'>BIO</div>
+              <h2 className="card-title">BIO</h2>
               <div className='link'> Maps Link: <a target='_blank' href={country?.maps?.googleMaps} rel="noreferrer">Map Location</a>
             </div>
               <span className='info'>Offical Name: {country.name.official}</span>
@@ -38,9 +41,11 @@ const InfoSideOne: React.FC<InfoOneProps> = ({country}) => {
                   <span className='info'>Region: {country?.region}</span>
               </div>
           </div>
+          
         </div>
         <div/>
         </div>
+        
 
   );
 }

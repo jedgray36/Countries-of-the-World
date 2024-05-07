@@ -2,12 +2,12 @@
     margin-left: 0.3rem;
     padding: 0.4rem;
     text-align: left;
-    border-radius: 5px;
+    border-radius: 3px;
     text-wrap: none;
 }
 
 .country:hover {
-background-color: #464646;
+background-color: #007add;
 transition: background-color 0.2s;
 }
 
@@ -16,5 +16,5 @@ transition: background-color 0.2s;
 }
 
 .flag {
-    border-radius: 30px;
+    border-radius: 3px !important;
 }

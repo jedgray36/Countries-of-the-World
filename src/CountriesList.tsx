@@ -8,9 +8,10 @@ interface filterProps {
 regionFilter: string;
 sort: string;
 setCountry: (country: Country) => void;
+setCountries?: (countries: Country[]) => void;
 }
 
-const CountriesList: React.FC<filterProps> = ({regionFilter, sort, setCountry}) => {
+const CountriesList: React.FC<filterProps> = ({regionFilter, sort, setCountry, setCountries}) => {
 
     const api = "https://restcountries.com/v3.1";
 
@@ -47,15 +48,15 @@ const CountriesList: React.FC<filterProps> = ({regionFilter, sort, setCountry}) 
             const countries = await fetch(URL);
             const jsonData = await countries.json();
             const sortedData = sortData(jsonData);
-            console.log(sortedData);
             setData(sortedData);
             setSearchData(sortedData);
+            setCountries?.(sortedData);
         } catch(e) {
             console.log(e)
         }
       };
     getData();
-    }, [regionFilter, sort, sortData])
+    }, [regionFilter, setCountries, sort, sortData])
     
 
   const search = useCallback((query: string) => {

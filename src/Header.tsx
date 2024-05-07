@@ -23,7 +23,7 @@ const Header: React.FC<headerProps> = ({setQuiz}) => {
     <div className='appTitle'>{quizState ? "FLAGS OF THE WORLD" : "COUNTRIES OF THE WORLD"}</div>
     </div>
     <div className='sideContainer'>
-    <button className='flagButton' onClick={() => {toggle()}}>{!quizState ? "Flags Quiz" : "Countries"}</button>
+    <button className="btn btn-active btn-primary" onClick={() => {toggle()}}>{!quizState ? "Flags Quiz" : "Countries"}</button>
     </div>
     </div>
     </div>
