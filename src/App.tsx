@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -9,6 +9,7 @@ import InfoSideOne from './InfoSideOne';
 import { Country } from './Interfaces/Countries';
 import FlagQuiz from './FlagQuiz';
 import Stats from './Stats';
+import 'tailwindcss/tailwind.css'; 
 
 const App = () => {
 const [filter, setFilter] = useState("");
@@ -16,6 +17,7 @@ const [sort, setSort] = useState("");
 const [country, setCountry] = useState<Country>();
 const [quiz, setQuiz] = useState(false);
 const [countrys, setCountries] = useState<Country[]>()
+
 
 const openQuiz = () => {
   setQuiz(!quiz);
@@ -40,8 +42,9 @@ const openQuiz = () => {
           <InfoSideOne country={country}/> </>
           : 
           " "}
-          <Stats countries={countrys} />
-    </div>
+          {(!country && !quiz) &&
+          <Stats countries={countrys} />}
+</div>
     </div>
     </div>
   );

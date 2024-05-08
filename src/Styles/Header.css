@@ -1,7 +1,7 @@
 .header {
-  background-image: linear-gradient(#004e96, rgb(0, 97, 215));;
+  background-image: linear-gradient(#004e96, rgb(0, 97, 215));
   color: #ffffff;
-    padding: 20px;
+    padding: 12px;
     flex: 1;
   }
 
@@ -33,5 +33,9 @@ width: 100%;
 
 .flagButton:hover {
   background-color: #123C69;
+}
+
+.buttons-con {
+  margin: 1rem;
 }
     

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import CountriesList from "./CountriesList";
+import 'chart.js/auto';
 import "./Styles/Stats.css"
 import { Country } from "./Interfaces/Countries";
-
+import { Chart, Doughnut } from 'react-chartjs-2';
+import TableModal from "./TableModal";
 
 interface StatsProps {
     countries: Country[] | undefined;
@@ -10,61 +11,54 @@ interface StatsProps {
 
 
 const Stats: React.FC<StatsProps> = ({ countries }) => {
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+
+  const generateRandomColor = () => {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+  const data = {
+    labels: ['Red', 'Blue', 'Yellow'],
+    datasets: [
+      {
+        data: [300, 50, 100],
+        backgroundColor: ['white', 'blue', 'black'],
+        hoverBackgroundColor: ['grey', 'darkblue', 'white'],
+      },
+    ],
+  };
+
       return (
         <>
         <div className="stats">
-        <div className="flex w-full">
-        <div className="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center">
-        <div className="overflow-x-auto">
-        {countries && (
-  <table className="table">
-    {/* head */}
-    <thead>
-      <tr>
-        <th>
-        </th>
-        <th>Flag</th>
-        <th>Country</th>
-        <th>Capital</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      {countries.map((countryItem: Country) => (
-      <tr>
-      <th>
-      </th>
-      <td>
-        <div className="flex items-center gap-3">
-          <div className="avatar">
-            <div className="mask mask-squircle w-12 h-12">
-              <img width={50} height={20} src={countryItem.flags.svg} alt="Avatar" />
-            </div>
+          <div className="card w-96 bg-primary text-primary-content">
+          <div className="card-body">
+Welcome to "Countries of the World! 🌍🚩
+Embark on an exciting journey around the globe as you explore the flags of different countries. This app is designed to help you expand your knowledge of world while having fun along the way.</div>
+</div>
+        <TableModal countries={countries} toggle={modalOpen} onClose={() => setModalOpen(false)}/>
+        <div className="split">
+        <div className="w-1/4 ...">
+        <div className="card w-96 bg-primary text-primary-content">
+          <div className="card-body">
+          <Doughnut data={data} />
+          </div>
           </div>
         </div>
-      </td>
-      <td>
-        Zemlak, Daniel and Leannon
-        <br/>
-        <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-      </td>
-      <td>Purple</td>
-      <th>
-        <button className="btn btn-ghost btn-xs">details</button>
-      </th>
-    </tr>
-      ))}
-    </tbody>
-  </table>
-)}
-</div> 
+        <div className="w-3/4 ...">
+        <div className="card w-96 bg-primary text-primary-content">
+          <div className="card-body">
+          <Chart width="700" height="300" type='line' data={data} />
+          </div>
+          </div>
         </div>
-        </div>
-        <div className="divider divider-primary">Primary</div>
-        <div className="flex flex-col w-full">
-        <div className="grid h-20 card bg-base-300 rounded-box place-items-center">content</div> 
-        <div className="divider"></div> 
-        <div className="grid h-20 card bg-base-300 rounded-box place-items-center">content</div>
         </div>
         </div>
         </>

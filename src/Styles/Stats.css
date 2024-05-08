@@ -1,4 +1,11 @@
 
 .stats {
     margin: 3rem;
+    display: block;
+}
+
+.split {
+display: flex;
+justify-content: space-around;
+margin-top: 3rem;
 }
