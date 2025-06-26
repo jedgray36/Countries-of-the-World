@@ -4,6 +4,7 @@
     text-align: left;
     border-radius: 3px;
     text-wrap: none;
+    display: flex;
 }
 
 .country:hover {

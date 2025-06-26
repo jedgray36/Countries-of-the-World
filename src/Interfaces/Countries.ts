@@ -1,27 +1,34 @@
 export interface Country {
-    capital: string,
-    capitalInfo: {
-      latlng: []
-    }
-
-    flags: {
-      svg: string
-    },
-    languages: {
-      language: []
-    },
-    maps: {
-      googleMaps: string
-    }
-    name: {
-      common: string,
-      official: string,
-    },
-    population: number,
-    region: string
-    
-  }
-
+  name: {
+    common: string;
+    official: string;
+    nativeName?: {
+      [langCode: string]: {
+        official: string;
+        common: string;
+      };
+    };
+  };
+  capital?: string[]; // some countries may have multiple capitals or none
+  capitalInfo?: {
+    latlng: number[];
+  };
+  latlng?: number[];
+  population: number;
+  region: string;
+  flags: {
+    png: string;
+    svg: string;
+    alt?: string;
+  };
+  languages?: {
+    [languageCode: string]: string;
+  };
+  maps?: {
+    googleMaps: string;
+    openStreetMaps?: string;
+  };
+}
 
   export const regions = [
     "All",
