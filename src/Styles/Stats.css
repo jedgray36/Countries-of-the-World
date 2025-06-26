@@ -2,10 +2,48 @@
 .stats {
     margin: 3rem;
     display: block;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .split {
 display: flex;
 justify-content: space-around;
-margin-top: 3rem;
+margin-top: 1rem;
+}
+
+.flag-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.flag-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #004e96;
+  border: 1px solid #ddd;
+  color: '#fff';
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.flag-card img {
+  width: 120px;
+  height: 80px;
+  object-fit: contain;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.flag-card span {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: '#fff';
 }

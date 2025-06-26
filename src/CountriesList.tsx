@@ -89,11 +89,11 @@ const CountriesList: React.FC<filterProps> = ({
           key={country.name.common}
           onClick={() => setCountry(country)}
         >
-          <img
+          {/* <img
             src={country.flags.svg}
             alt={`${country.name.common} flag`}
             style={{ width: "32px", height: "20px", marginRight: "8px" }}
-          />
+          /> */}
           {country.name.common}
         </div>
       ))}

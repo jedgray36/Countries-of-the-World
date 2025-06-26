@@ -35,7 +35,10 @@ const Stats: React.FC<StatsProps> = ({ countries }) => {
   return (
     <>
       <div className="stats">
-        <div className="card w-96 bg-primary text-primary-content">
+        <div
+          className="card w-96 bg-primary text-primary-content"
+          style={{ marginBottom: "0rem" }}
+        >
           <div className="card-body">
             Welcome to "Countries of the World! 🌍🚩 Embark on an exciting
             journey around the globe as you explore the flags of different
@@ -43,7 +46,31 @@ const Stats: React.FC<StatsProps> = ({ countries }) => {
             world while having fun along the way.
           </div>
         </div>
-        {/* <TableModal countries={countries} toggle={modalOpen} onClose={() => setModalOpen(false)}/>
+      </div>
+      <div
+        style={{
+          margin: "2rem",
+          marginTop: "0rem",
+          marginBottom: "0rem",
+          maxHeight: "29rem",
+          overflowY: "scroll",
+        }}
+      >
+        {countries && (
+          <div className="flag-grid">
+            {countries.map((country) => (
+              <div key={country.name.common} className="flag-card">
+                <img
+                  src={country.flags.svg}
+                  alt={`${country.name.common} flag`}
+                />
+                <span style={{ color: "#fff" }}>{country.name.common}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+      {/* <TableModal countries={countries} toggle={modalOpen} onClose={() => setModalOpen(false)}/>
         <div className="split">
         <div className="w-1/4 ...">
         <div className="card w-96 bg-primary text-primary-content">
@@ -60,7 +87,6 @@ const Stats: React.FC<StatsProps> = ({ countries }) => {
           </div>
         </div>
         </div> */}
-      </div>
     </>
   );
 };
